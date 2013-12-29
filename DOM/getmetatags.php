@@ -1,6 +1,6 @@
 <?php
 
-// Get meta tags from a particular site
+// Returns meta tags (description and keywords), page title and URI from a particular site
 // Needs CURL and DOM libs
 
 // example: http://localhost/ltools/DOM/getmetatags.php?url=http://www.domain.com.br
@@ -11,6 +11,7 @@ $html = file_get_contents_curl( $_GET['url'] );
 $title = NULL;
 $description = 'null';
 $keywords = 'null';
+$uri = 'null';
 
 //parsing begins here:
 $doc = new DOMDocument();
@@ -34,4 +35,10 @@ for ($i = 0; $i < $metas->length; $i++) {
         
 }
 
-print "$title##$description##$keywords";
+// getting the URI
+$parse_url = parse_url($_GET['url']);
+if ($parse_url['path'] && $parse_url['path'] != '/') {
+  $uri = substr($parse_url['path'], 1);
+}
+  
+print "$title##$description##$keywords##$uri";
