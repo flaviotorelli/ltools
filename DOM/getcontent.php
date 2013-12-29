@@ -2,7 +2,7 @@
 
 // Returns a block of content from an external site
 // Example:
-// http://localhost/ltools/DOM/getcontent.php?url=https://domain.com/about&attr=class&value=<classname>
+// /ltools/DOM/getcontent.php?url=http://www.domain.com.br/about/&attr=class&value=<classname>&element=div
 
 include 'simplehtmldom/simple_html_dom.php';
 
