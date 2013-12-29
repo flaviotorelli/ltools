@@ -19,7 +19,7 @@ $doc = new DOMDocument();
 $nodes = $doc->getElementsByTagName('title');
 
 //getting what you need:
-$title = ($nodes->item(0)->nodeValue);
+$title = trim($nodes->item(0)->nodeValue);
 
 $metas = $doc->getElementsByTagName('meta');
 
@@ -39,6 +39,8 @@ for ($i = 0; $i < $metas->length; $i++) {
 $parse_url = parse_url($_GET['url']);
 if ($parse_url['path'] && $parse_url['path'] != '/') {
   $uri = substr($parse_url['path'], 1);
+  //removing some extensions
+  $uri = str_replace(array('.aspx', '.asp', '.php', '.html', '.htm'), array(''), $uri);
 }
   
 print "$title##$description##$keywords##$uri";
