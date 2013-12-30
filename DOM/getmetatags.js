@@ -2,7 +2,7 @@
 // Copy this snippet and past into a console javascript during a new Drupal page creation
 // NOTE: do now use Admin Drupal with overlay enabled in this case
 
-jQuery.get( "/ltools/DOM/getmetatags.php?url=http://www.tableless.com.br", function( data ) {
+jQuery.get( "/ltools/DOM/getmetatags.php?url=http://www.domain.com.br", function( data ) {
 var result = data.split('##');
   var page_title = result[0];
   var meta_description = result[1];
