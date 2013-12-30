@@ -1,4 +1,4 @@
-jQuery.get( "/ltools/DOM/getmetatags.php?url=http://www.tableless.com.br/contato", function( data ) {
+jQuery.get( "/ltools/DOM/getmetatags.php?url=http://www.domain.com.br/contato", function( data ) {
 var result = data.split('##');
   var page_title = result[0];
   var meta_description = result[1];
