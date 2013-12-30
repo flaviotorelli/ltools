@@ -10,7 +10,7 @@ var result = data.split('##');
     error = true;
   }
 
-  if (meta_description != 'null' || jQuery("meta[name=description]").length) {
+  if (meta_description != 'null' || jQuery("meta[name=description]").length > 0) {
     if (meta_description != jQuery("meta[name=description]").attr('content')) {
       alert('Meta description does NOT match!');
       error = true;
